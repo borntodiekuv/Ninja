@@ -1,4 +1,3 @@
-
 _G.Color = Color3.fromRGB(66, 135, 245)
 _G.Color2 = Color3.fromRGB(66, 135, 245)
 
@@ -49,7 +48,7 @@ game:GetService("Players").LocalPlayer.ninjaEvent:FireServer(ohString1)
 
 sect1:AddToggle("Auto Sell", false, function(b)
     bb = b
-    while bb do task.wait()
+    while bb do task.wait(2)
         
         game:GetService("Workspace").sellAreaCircles.sellAreaCircle16.circleInner.CFrame = CFrame.new(50,50,50)
         game:GetService("Workspace").sellAreaCircles.sellAreaCircle16.circleInner.CFrame = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)
@@ -120,9 +119,7 @@ sect1:AddToggle("Auto Buy Skills", false, function(f)
             end
         end)
 
-       sect1:AddToggle("Auto Chest", false, function(g)
-        gg = g
-            while gg do task.wait()
+        sect1:AddButton("Auto Chest", function()
                     for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
                         if string.match(v.Name,"Chest") and v:IsA("Model") then
                             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.circleOuter.Position)
@@ -130,7 +127,6 @@ sect1:AddToggle("Auto Buy Skills", false, function(f)
                             wait(0.5)
                         end 
                     end
-                end
             end)
         
 
@@ -144,3 +140,9 @@ sect1:AddToggle("Auto Buy Skills", false, function(f)
                 wait()
                     end
                 end)
+
+              
+
+
+                
+            

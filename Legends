@@ -120,7 +120,9 @@ sect1:AddToggle("Auto Buy Skills", false, function(f)
             end
         end)
 
-        sect1:AddButton("Auto Chest", function()
+       sect1:AddToggle("Auto Chest", false, function(g)
+        gg = g
+            while gg do task.wait()
                     for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
                         if string.match(v.Name,"Chest") and v:IsA("Model") then
                             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(v.circleOuter.Position)
@@ -128,6 +130,7 @@ sect1:AddToggle("Auto Buy Skills", false, function(f)
                             wait(0.5)
                         end 
                     end
+                end
             end)
         
 
